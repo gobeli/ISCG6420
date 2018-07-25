@@ -1,0 +1,14 @@
+.nav {
+  padding: 0 $spacing--base;
+  background-color: $color--bg--secondary;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  &__item {
+    padding: $spacing--base;
+    display: inline-block;
+    text-decoration: none;
+    border-bottom: 5px solid transparent;
+    &:hover, &--acitve {
+      border-color: $color--primary;
+    }
+  }
+}

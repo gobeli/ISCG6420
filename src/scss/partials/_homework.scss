@@ -1,0 +1,15 @@
+.weeks {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: $spacing--base / 2;
+  @include MQ(M) {
+    grid-gap: 1.5rem;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  &__week {
+    text-align: center;
+    background-color: $color--bg--secondary;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  }
+
+}

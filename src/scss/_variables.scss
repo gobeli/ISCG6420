@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:300,400');
+
+$color--bg: #FCFCFC;
+$color--bg--secondary: #FFF;
+$color--primary: #f3ebe0;
+$color--font: #272828;
+$color--font--light: lighten($color--font, 10);
+
+$font--body: 'Roboto Slab', serif;
+$font--header: 'Roboto Slab', serif;
+
+$spacing--base: 1rem;
+
+$S:     768px;
+$M:     992px;
+$L:     1200px;

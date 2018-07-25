@@ -1,0 +1,28 @@
+{
+  "name": "iscg6420",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "NODE_ENV=production && parcel build src/view/*.html -d build --public-url ./",
+    "start": "node_modules/.bin/parcel src/view/**/*.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gobeli/ISCG6420.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gobeli/ISCG6420/issues"
+  },
+  "homepage": "https://github.com/gobeli/ISCG6420#readme",
+  "dependencies": {
+    "autoprefixer": "^9.0.1",
+    "parcel": "^1.9.7"
+  },
+  "devDependencies": {
+    "node-sass": "^4.9.2"
+  }
+}
