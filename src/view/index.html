@@ -10,15 +10,26 @@
 <body>
   <nav class="nav">
     <a href="/" class="nav__item nav__item--acitve">Home</a>
+    <a href="#tasks" class="nav__item">Tasks</a>
+    <a href="#homework" class="nav__item">Homework</a>
   </nav>
   <header class="header">
-    <h1>ISCG6420 - Etienne Gobeli</h1>
+    <img src="../assets/me.jpeg" class="header__me" alt="Me">
+    <h1 class="header__title">ISCG6420 - Etienne Gobeli</h1>
   </header>
   <main class="container">
-    <h2>Tasks</h2>
+    <h2 id="tasks">Tasks</h2>
+    <section class="weeks">
+      <a href="tasks/week1/task1.html" class="weeks__week">
+        <h3>Week 1</h3>
+      </a>
+    </section>
+    <h2 id="homework">Homework</h2>
     <section class="weeks">
       <div class="weeks__week">
-        <h3><a href="tasks/task1.html">Week 1</a></h3>
+        <a href="#" class="weeks__week">
+          <h3>Week 1</h3>
+        </a>
       </div>
     </section>
   </main>

@@ -1,16 +1,13 @@
 .header {
   position: relative;
-  // &::after {
-  //   z-index: -1;
-  //   position: absolute;
-  //   bottom: -100px;
-  //   left: 0;
-  //   display: block;
-  //   content: '';
-  //   background: url('assets/triangle.svg');
-  //   background-size: 100% 100%;
-  //   height: 100px;
-  //   width: 100%;
-  //   transform: rotateY(180deg)
-  // }
+  padding-top: $spacing--base*2;
+  text-align: center;
+  &__me {
+    border-radius: 50%;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  }
+  &__title {
+    color: $color--primary;
+    margin-bottom: 0;
+  }
 }
