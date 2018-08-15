@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "NODE_ENV=production && parcel build src/view/*.html -d build --public-url /iwd18s2/6133/gobele01iwd/",
-    "start": "node_modules/.bin/parcel src/view/**/*.html",
+    "start": "parcel src/view/*.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

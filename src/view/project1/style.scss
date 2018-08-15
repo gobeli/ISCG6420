@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+.container {
+  padding: 1rem;
+}
+
+.ad1 {
+  position: relative;
+  height: 200px;
+  background-image: linear-gradient(to top, #e6b980 0%, #eacda3 100%);
+  &__logo {
+    transform: translate(-150px, 0);
+    animation: ad1Logo 2s forwards;
+  }
+  &__title {
+    text-align: center;
+    color: #009dbc;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    margin: 1rem 0;
+    font-weight: 500;
+    animation: fadeIn 3s forwards;
+    opacity: 0;
+  }
+  &__image {
+    height: 200px;
+    width: 100%;
+    background: url('slide4d.jpg') center top no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: -200px;
+    left: 0;
+    animation: ad1Image 1s 3s forwards;
+    text-align: center;
+  }
+  &__slogan {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    color: #FFED00;
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 1rem auto;
+    letter-spacing: .15em;
+    width: 0;
+    animation: ad1Typing 4s 4s steps(50, end) forwards, ad1Color 4s both infinite;
+  }
+  &__call {
+    text-align: center;
+    display: inline-block;
+    font-size: 1.5rem;
+    background-color: #05668D;
+    text-decoration: none;
+    padding: .5rem 1rem;
+    border-radius: 3px;
+    color: #FFF;
+    transform: scale(0);
+    animation: ad1Call 2s 6s forwards;
+  }
+  &__student {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    color: #555;
+    opacity: 0;
+    animation: fadeIn 2s 7s forwards;
+  }
+}
+
+@keyframes ad1Logo {
+  from {
+    transform: translate(-200px, 0);
+  }
+  to {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes ad1Image {
+  from {
+    top: -200px;
+  }
+  to {
+    top: 0;
+  }
+}
+
+@keyframes ad1Typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes ad1Color {
+  0% {
+    color: #FFED00;
+  }
+  50% {
+    color: #FF9E00;
+  }
+  100% {
+    color: #FFED00;
+  }
+}
+
+@keyframes ad1Call {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1)
+  }
+}
+
+.tutorial {
+  width: 60%;
+  border-top: 2px solid #333;
+  border-right: 2px solid #333;
+  &__nav {
+    border-bottom: 2px solid #333;
+    display: flex;
+    justify-content: center;
+    padding: .5rem 0;
+    a {
+      display: inline-block;
+      text-decoration: none;
+      background-color: #009dbc;
+      color: #f5f5f5;
+      padding: .5rem;
+      margin-right: .5rem;
+    }
+  }
+}

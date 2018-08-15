@@ -1,0 +1,25 @@
+.mybackground {
+  background: url(under-water.jpg) no-repeat;
+  background-size: cover;
+  width: 800px;
+  height: 600px;
+}
+
+.mybackground .crab {
+  background: url(crab.gif);
+  height: 150px;
+  width: 225px;
+  position: absolute;
+}
+.myButton
+{
+	background-color:#69ACE2;
+	width: 90px;
+	height: 30px;
+	border:5px solid blue;
+
+}
+
+#sound {
+  display: none;
+}

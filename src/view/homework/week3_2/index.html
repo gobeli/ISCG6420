@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Products</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+  <h2>Add Product</h2>
+  <div>
+    <label for="name">Name</label><br>
+    <input type="text" name="name" id="name">
+    <input type="button" value="Add" id="add">
+  </div>
+  <h2>Products</h2>
+  <ul id="products">
+  </ul>
+  <script>
+    function Product(name) {
+      this.name = name;
+    }
+
+    function render() {
+      $products.innerHTML = products.map(p => `<li>${p.name}</li>`).join('');
+    }
+
+    function addProduct() {
+      products.push(new Product($name.value));
+      render();
+      $name.value = '';
+    }
+
+    const products = [new Product('Glasses'), new Product('Shirt')];
+    const $products = document.getElementById('products'),
+      $name = document.getElementById('name'),
+      $add = document.getElementById('add');
+
+    $add.addEventListener('click', addProduct);
+    render();
+  </script>
+</body>
+</html>

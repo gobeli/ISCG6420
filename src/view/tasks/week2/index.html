@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>ISCG6420</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.scss">
+</head>
+<body>
+  <h1>Task 1 - Only CSS</h1>
+  <div class="animate">
+    <h2>Hello</h2>
+    <h1>Welcome Home</h1>
+    <img src="rocket.png" alt="" height="75px">
+    <a href="https://duckduckgo.com/">duckduckgo</a>
+  </div>
+  <h2>Task 2 - CSS and JS</h2>
+
+  <div class="controls">
+    <div>
+      <label for="rangeHeight">Height</label><br>
+      <input type="range" name="height" id="rangeHeight" value="100" min="0" max="200">
+    </div>
+    <div>
+      <label for="rangeWidth">Width</label><br>
+      <input type="range" name="width" id="rangeWidth" value="100" min="0" max="200">
+    </div>
+    <div>
+      <label for="color">Color</label><br>
+      <input type="color" name="color" id="color">
+    </div>
+  </div>
+  <br>
+  <div id="output"></div>
+  <script>
+    const $height = document.getElementById('rangeHeight'),
+      $width = document.getElementById('rangeWidth'),
+      $color = document.getElementById('color'),
+      $output = document.getElementById('output');
+
+    function change() {
+      $output.style.height = `${$height.value}px`;
+      $output.style.width = `${$width.value}px`;
+      $output.style.backgroundColor = $color.value;
+    }
+
+    $height.addEventListener('change', change);
+    $width.addEventListener('change', change);
+    $color.addEventListener('change', change);
+    change();
+  </script>
+</body>
+</html>

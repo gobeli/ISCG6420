@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="style.css">
+<script type="text/javascript">
+
+function move(){
+	var $crab = document.getElementById('mycrab');
+	var $audio = document.getElementById('sound');
+	var top = 300;
+	var left = 658;
+	var point = 0;
+	$audio.play();
+	function moveCrab()
+	{
+		switch (point) {
+			case 0:
+				left-=2;
+				if (left <= 150) {
+					point++;
+				}
+				break;
+			case 1:
+				top-=2;
+				if (top <= 150) {
+					point++;
+				}
+				break;
+			case 2:
+				left+=2;
+				if (left >= 650) {
+					clearInterval(interval);
+					$audio.pause();
+				}
+				break;
+		}
+		$crab.style.top = top + 'px';
+		$crab.style.left = left + 'px';
+	}
+	var interval = setInterval(moveCrab,30);
+}
+
+
+</script>
+<meta charset="utf-8">
+</head>
+<body>
+<div class="mybackground">
+	<div class="myButton" id="start" onclick="javascript:move();">Move Crab</div><br />
+ 	<div style="left: 658px; top: 300px;" class="crab" id="mycrab" ></div>
+</div>
+<audio controls id="sound" loop>
+		<source src="crab.mp3" type="audio/mpeg" >
+	Your browser does not support the audio element.
+	</audio>
+
+
+
+</body></html>

@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<link rel="stylesheet" href="style.css">
+<script type="text/javascript">
+
+function looping() {
+	var $el = document.querySelector('.example_block');
+	var deg = 0;
+	function frame() {
+		$el.style.transform = `rotateZ(${deg}deg)`;
+		deg++;
+		if (deg === 360) {
+			clearInterval(id);
+		}
+	}
+  var id = setInterval(frame, 10); // draw every 10ms
+}
+
+function move() {
+	var $audio = document.getElementById('swanLake'),
+	elem = document.querySelector('.example_block'),
+	$button = document.getElementById('start');
+
+	$audio.play();
+  var left = 0;
+	var top = 0;
+	var point = 0;
+
+  function frame() {
+		if (point === 0) {
+			left++;
+			top++;
+			if (left > 300) {
+				point = 1;
+			}
+		}
+
+		if (point === 1) {
+			left--;
+			if (left < 30) {
+				point = 2;
+			}
+		}
+
+		if (point === 2) {
+			left++;
+			top += 0.4;
+			if (top > 480) {
+				clearInterval(id);
+			  $audio.pause();
+			}
+		}
+    elem.style.left = left + 'px'; // show frame
+		elem.style.top = top + 'px';
+  }
+  var id = setInterval(frame, 10); // draw every 10ms
+//setInterval look at  http://www.w3schools.com/jsref/met_win_setinterval.asp
+}
+
+</script>
+</head>
+<body>
+<button onclick="move()" id="start">Start</button>
+<button onclick="looping()">Looping</button>
+<div class="example_path">
+ <div class="example_block" id="gr"></div>
+</div>
+<audio controls id="swanLake">
+	<source src="swan_lake.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+
+</body>
+</html>
