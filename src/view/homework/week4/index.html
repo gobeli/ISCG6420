@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Subjects</title>
+  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+  <style>
+  .content {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1em;
+    padding-right: 1em;
+    max-width: 768px;
+  }
+  .button-small {
+    font-size: 85%;
+  }
+  </style>
+</head>
+<body>
+  <main class="content">
+    <h2>Subjects</h2>
+    <button class="pure-button pure-button-primary" id="display">Display Subjects</button>
+    <br><br>
+    <table class="pure-table" id="subjects">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+    <br>
+    <button class="pure-button pure-button-primary" id="add">Add</button>
+    <div id="edit">
+      <h2>Edit "<span id="subjectName"></span>"</h2>
+      <form class="pure-form pure-form-stacked">
+        <div>
+          <label for="id">Id</label>
+          <input type="text" name="id" id="id">
+        </div>
+        <div>
+          <label for="name">Name</label>
+          <input type="text" name="name" id="name">
+        </div>
+        <input class="pure-button pure-button-primary" type="submit" value="Update">
+      </form>
+    </div>
+  </main>
+  <script src="./subjects.js"></script>
+</body>
+</html>

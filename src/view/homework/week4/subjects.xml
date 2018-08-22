@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<Subjects>
+  <Subject>
+    <Id>DACA7322</Id>
+    <Name>Advanced Interactive Design Practice</Name>
+  </Subject>
+  <Subject>
+    <Id>ISCG7427</Id>
+    <Name>Agile and Lean Software Delivery</Name>
+  </Subject>
+  <Subject>
+    <Id>ISCG6411</Id>
+    <Name>Project Planning And Control</Name>
+  </Subject>
+  <Subject>
+    <Id>ISCG6420</Id>
+    <Name>Internet And Website Development</Name>
+  </Subject>
+</Subjects>
