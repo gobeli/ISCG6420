@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>canvas Start</title>
+  <style>
+    body { background-color:#eeeeee; }
+    #outer {margin-left:40px;
+      margin-top:40px;
+    }
+  </style>
+</head>
+<body>
+  <div id="outer">
+    <canvas id="myCanvas" width="400" height="400">
+      Your browser doesn't support the canvas! Try another browser.
+    </canvas>
+  </div>
+  <script>
+    var c=document.getElementById("myCanvas");
+    var context = c.getContext('2d');
+    var c1=0.25, c2=0.5, c3=0.75, d=0.05;
+    var move, dir = 1;
+
+    function init() {
+      move = setInterval(draw, 100);
+    }
+
+    function makeGradient(gradient) {
+      gradient.addColorStop(0, '#52040B');
+      gradient.addColorStop(c1, '#75060F');
+      gradient.addColorStop(c2, '#960814');
+      gradient.addColorStop(c3, '#C90A1B');
+      gradient.addColorStop(1, '#FF0D22');
+    }
+
+    function draw() {
+      context.clearRect(0,0,400,400);
+      var gradient1 = context.createLinearGradient(0,0,200,200);
+      makeGradient(gradient1)
+      context.fillStyle = gradient1;
+      context.fillRect(0,0,200,200);
+
+      var gradient2 = context.createLinearGradient(400,0,200,200);
+      makeGradient(gradient2)
+      context.fillStyle = gradient2;
+      context.fillRect(200, 0, 200, 200);
+
+      var gradient3 = context.createLinearGradient(0,400,200,200);
+      makeGradient(gradient3)
+      context.fillStyle = gradient3;
+      context.fillRect(0, 200, 200, 200);
+
+      var gradient4 = context.createLinearGradient(400,400,200,200);
+      makeGradient(gradient4)
+      context.fillStyle = gradient4;
+      context.fillRect(200, 200, 200, 200);
+
+
+      if (c3 >= 0.95) {
+        dir = -1;
+      }
+      if (c1 <= 0.05) {
+        dir = 1;
+      }
+      c1 += d*dir;
+      c2 += d*dir;
+      c3 += d*dir;
+    }
+
+    init();
+  </script>
+</body>
+</html>

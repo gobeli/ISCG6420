@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>canvas Start</title>
+  <style>
+    body { background-color:#eeeeee; }
+    #outer {margin-left:40px;
+      margin-top:40px;
+    }
+  </style>
+</head>
+<body>
+  <div id="outer">
+    <canvas id="myCanvas" width="800" height="400">
+      Your browser doesn't support the canvas! Try another browser.
+    </canvas>
+  </div>
+  <script>
+    var c=document.getElementById("myCanvas");
+    var context = c.getContext('2d');
+
+    function clearCircle(x, y, radius) {
+        context.beginPath();
+        context.arc(x, y, radius, 0, 2 * Math.PI, true);
+        context.clip();
+        context.clearRect(x - radius - 1, y - radius - 1,
+                          radius * 2 + 2, radius * 2 + 2);
+        context.closePath();
+    }
+    function eye(x) {
+      context.beginPath();
+      context.fillStyle='powderblue';
+      context.arc(x,150,20,0,2*Math.PI,true);
+      context.closePath();
+      context.stroke();
+      context.fill();
+    }
+
+    function ear(x) {
+      context.fillStyle = '#FF3300';
+      context.fillRect(x, 50, 20, 50);
+    }
+
+    function foot(x) {
+      context.beginPath();
+      context.fillStyle='#FFFF00';
+      context.strokeStyle='#000';
+      context.arc(x,250,50,0,Math.PI,true);
+      context.closePath();
+      context.stroke();
+      context.fill();
+    }
+
+    function init() {
+      context.strokeStyle = 'blue';
+      context.lineWidth = 5;
+      context.strokeRect(10, 10, 700, 300);
+
+      context.fillStyle= 'orange';
+      context.fillRect(300, 100, 300, 150);
+
+      context.beginPath();
+      context.strokeStyle="#000";
+      context.fillStyle='#FFBF80';
+      context.arc(150,150,100,0,2*Math.PI,true);
+      context.closePath();
+      context.stroke();
+      context.fill();
+
+      eye(110);
+      eye(190);
+      draw();
+      ear(75);
+      ear(205);
+      foot(100);
+      foot(200);
+
+      context.beginPath();
+      context.strokeStyle='red';
+      context.arc(150,180,30,0,Math.PI,false);
+      context.closePath();
+      context.stroke();
+    }
+    const pupil1 = { defaultX:110, defaultY: 150, x: 110, y: 150 };
+    const pupil2 = { defaultX: 190, defaultY: 150, x: 190, y: 150 };
+
+    function drawPupil(pupil) {
+      context.beginPath();
+      context.strokeStyle="#000";
+      context.fillStyle='#FFF';
+      context.lineWidth=5;
+      context.arc(pupil.x,pupil.y,3,0,2*Math.PI,true);
+      context.closePath();
+      context.stroke();
+      context.fill();
+    }
+
+    function mapPupil(pupil, mouseX, mouseY) {
+      const maxX = pupil.x;
+      const maxY = pupil.y;
+      const dx = mouseX - pupil.x;
+      const dy = mouseY - pupil.y;
+      pupil.x = pupil.defaultX + dx / window.innerWidth * 14.142 ;
+      pupil.y = pupil.defaultY + dy / window.innerHeight * 14.142 ;
+    }
+
+    function draw(mouseX, mouseY) {
+      if (mouseX && mouseY) {
+        mapPupil(pupil1, mouseX, mouseY);
+        mapPupil(pupil2, mouseX, mouseY);
+      }
+
+      drawPupil(pupil1);
+      drawPupil(pupil2);
+    }
+    document.onmousemove = function(e){
+      eye(110);
+      eye(190);
+      draw(e.pageX, e.pageY);
+    }
+    init();
+  </script>
+</body>
+</html>

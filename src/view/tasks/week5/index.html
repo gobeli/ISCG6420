@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>canvas Start</title>
+  <style>
+    body { background-color:#eeeeee; }
+    #outer {margin-left:40px;
+      margin-top:40px;
+    }
+  </style>
+</head>
+<body>
+  <div id="outer">
+    <canvas id="myCanvas" width="400" height="400">
+      Your browser doesn't support the canvas! Try another browser.
+    </canvas>
+  </div>
+  <script>
+    var c=document.getElementById("myCanvas");
+    var context, move;
+    var x=20;
+    var y=20;
+    var dx=0;
+    var dy=0;
+    var cp = 0;
+    var limitB = 30;
+    var limitT = 300;
+
+    function init()
+    {
+      context= myCanvas.getContext('2d');
+      move = setInterval(draw,20);
+    }
+
+    function draw()
+    {
+      // context.clearRect(0,0, 400,400);
+      context.beginPath();
+      context.strokeStyle="#FF00FF";
+      // Draws a circle of radius 10 at the coordinates 10,10 on the canvas
+      context.arc(x,y,10,0,2*Math.PI,true);
+      context.closePath();
+      context.stroke();
+      switch (cp) {
+        case 0:
+          dx=20;
+          dy=0;
+          if (x>limitT) { cp = 1; }
+          break;
+        case 1:
+          dx=0;
+          dy=20;
+          if (y>limitT) {cp = 2;}
+          break;
+        case 2:
+          dx=-20;
+          dy=0;
+          if (x<=limitB) {
+            cp = 3;
+          }
+          break;
+        case 3:
+          dx=0;
+          dy=-20;
+          if (y<=limitB) {
+            if (limitB > 180) {
+              clearInterval(move);
+            }
+            x=limitB;
+            y=limitB;
+            cp = 0; limitB += 10; limitT -= 10;
+            return;
+          }
+          break;
+      }
+      x+=dx;
+      y+=dy;
+    }
+    init();
+
+  </script>
+</body>
+</html>
