@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
 
 * {
   box-sizing: border-box;
@@ -128,10 +129,14 @@ body {
   }
 }
 
+.split {
+  display: flex;
+}
+
 .tutorial {
-  width: 60%;
   border-top: 2px solid #333;
   border-right: 2px solid #333;
+  flex: 1;
   &__nav {
     border-bottom: 2px solid #333;
     display: flex;
@@ -146,4 +151,158 @@ body {
       margin-right: .5rem;
     }
   }
+}
+
+.ad2 {
+  background: linear-gradient(to right, #05514A 0%, #006D41 100%);
+  height: 400px;
+  width: 380px;
+  padding: 2rem;
+  overflow: hidden;
+  position: relative;
+  h1 {
+    color: #FFF;
+    font-family: 'Roboto Condensed', sans-serif;
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: normal;
+    a {
+      color: #FFF;
+    }
+  }
+}
+
+.scenes .scene1 {
+  animation: scene1 1s 3s forwards;
+  position: absolute;
+  &__title {
+    transform: translateY(-200px);
+    animation: title1 1s forwards;
+  }
+  &__logo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 5rem;
+    margin-right: 2rem;
+    transform: translateX(300px);
+    animation: logo1 1s 1s forwards;
+    h1 {
+      font-size: 3rem;
+      margin: 0;
+    }
+  }
+}
+
+@keyframes title1 {
+  0% {
+    transform: translateY(-200px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes logo1 {
+  from {
+    transform: translateX(300px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes scene1 {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+}
+
+.scenes .scene2 {
+  position: absolute;
+  width: 100%;
+  &__title {
+    opacity: 0;
+    transform: translateY(-100px);
+    animation: title2 1s 4s forwards, title2Out 1s 6s forwards;
+  }
+  &__logo {
+    display: flex;
+    align-items: center;
+    margin-top: 7rem;
+    transform: translateY(100px);
+    opacity: 0;
+    animation: logo2 1s 5s forwards;
+  }
+  .slogan {
+    font-size: 1.8rem;
+  }
+}
+
+@keyframes title2 {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes title2Out {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+}
+
+@keyframes logo2 {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.scenes .scene3 {
+  &__title {
+    opacity: 0;
+    transform: translateY(-100px);
+    animation: title2 1s 7s forwards;
+  }
+}
+
+.scenes .name {
+  display: block;
+  width: 100%;
+  color: #FFF;
+  opacity: 0;
+  transform: translateY(100px);
+  animation: logo2 1s 8s forwards;
+}
+
+.restart {
+  margin: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #006D41;
+  color: #FFF;
+  border: none;
+  font-size: 1rem;
+  float: right;
+  cursor: pointer;
 }

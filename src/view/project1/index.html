@@ -20,25 +20,69 @@
       <span class="ad1__student">Etienne Gobeli - 1509977 - <a href="Storyboard.jpg" target="_blank">Storyboard</a></span>
     </div>
   </div>
-  <section class="tutorial">
-    <nav class="tutorial__nav">
-      <a href="#step1">Step 1</a>
-      <a href="#step2">Step 2</a>
-      <a href="#step3">Step 3</a>
-      <a href="#step4">Step 4</a>
-    </nav>
-    <div class="container" id="step1">
-      <h2>Step 1</h2>
+  <div class="split">
+    <section class="tutorial">
+      <nav class="tutorial__nav">
+        <a href="#step1">Step 1</a>
+        <a href="#step2">Step 2</a>
+        <a href="#step3">Step 3</a>
+        <a href="#step4">Step 4</a>
+      </nav>
+      <div class="container" id="step1">
+        <h2>Step 1</h2>
+        In this tutorial we are going to create a todo application with color categorization. <br>
+        The first step is to render the todos into an unsorted list (<code>ul</code>).<br><br>
+
+        With the array <code>map</code>-function we can map the contents of the array to a HTML-string.
+        <p data-height="300" data-theme-id="10337" data-slug-hash="vzGXQK" data-default-tab="js,result" data-user="eGOB" data-pen-title="Tutorial #1" class="codepen">See the Pen <a href="https://codepen.io/eGOB/pen/vzGXQK/">Tutorial #1</a> by etienne (<a href="https://codepen.io/eGOB">@eGOB</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+      </div>
+      <div class="container" id="step2">
+        <h2>Step 2</h2>
+        <p data-height="300" data-theme-id="10337" data-slug-hash="WgwGqJ" data-default-tab="js,result" data-user="eGOB" data-pen-title="Tutorial #2" class="codepen">See the Pen <a href="https://codepen.io/eGOB/pen/WgwGqJ/">Tutorial #2</a> by etienne (<a href="https://codepen.io/eGOB">@eGOB</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+      </div>
+      <div class="container" id="step3">
+        <h2>Step 3</h2>
+        <p data-height="300" data-theme-id="10337" data-slug-hash="mGPOVw" data-default-tab="js,result" data-user="eGOB" data-pen-title="Tutorial #3" class="codepen">See the Pen <a href="https://codepen.io/eGOB/pen/mGPOVw/">Tutorial #3</a> by etienne (<a href="https://codepen.io/eGOB">@eGOB</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+      </div>
+      <div class="container" id="step4">
+        <h2>Step 4</h2>
+      </div>
+    </section>
+    <div>
+      <section class="ad2 scenes">
+        <div class="scene1">
+          <h1 class="scene1__title">Want to study but don't have enough credits?</h1>
+          <div class="scene1__logo">
+            <img width="100px" height="117px" src="./unitec.png" alt="Unitect">
+            <h1>Unitec</h1>
+          </div>
+        </div>
+        <div class="scene2">
+          <h1 class="scene2__title">Apply for a bridging course.</h1>
+          <div class="scene2__logo">
+            <h1 class="slogan">Think. Do. </h1>
+            <img width="100px" height="117px" src="./unitec.png" alt="Unitect">
+            <h1><a href="https://unitec.ac.nz" target="_blank">Unitec</a></h1>
+          </div>
+          <div class="name">Etienne Gobeli - 1509977</div>
+        </div>
+        <div class="scene3">
+          <h1 class="scene3__title">Why wait? Apply now for Semester 2.</h1>
+        </div>
+      </section>
+      <button class="restart" onclick="restart()">Restart</button>
     </div>
-    <div class="container" id="step2">
-      <h2>Step 2</h2>
-    </div>
-    <div class="container" id="step3">
-      <h2>Step 3</h2>
-    </div>
-    <div class="container" id="step4">
-      <h2>Step 4</h2>
-    </div>
-  </section>
+  </div>
+  <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+  <script>
+    function restart() {
+      const $scenes = document.querySelector('.scenes');
+
+      $scenes.classList.remove('scenes');
+      setTimeout(() => {
+        $scenes.classList.add('scenes');
+      }, 10);
+    }
+  </script>
 </body>
 </html>
