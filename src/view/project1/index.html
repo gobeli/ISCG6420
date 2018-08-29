@@ -17,7 +17,7 @@
     <div class="ad1__image">
       <h2 class="ad1__slogan">Cape Reinga with SandSafari - Nobody does it better</h2>
       <a class="ad1__call" href="http://www.sandsafaris.co.nz">Book Now</a>
-      <span class="ad1__student">Etienne Gobeli - 1509977 - <a href="Storyboard.jpg" target="_blank">Storyboard</a></span>
+      <span class="ad1__student">Etienne Gobeli - 1509977 - <a href="SandSafari_Storyboard.jpg" target="_blank">Storyboard</a></span>
     </div>
   </div>
   <div class="split">
@@ -26,26 +26,35 @@
         <a href="#step1">Step 1</a>
         <a href="#step2">Step 2</a>
         <a href="#step3">Step 3</a>
-        <a href="#step4">Step 4</a>
       </nav>
       <div class="container" id="step1">
         <h2>Step 1</h2>
-        In this tutorial we are going to create a todo application with color categorization. <br>
-        The first step is to render the todos into an unsorted list (<code>ul</code>).<br><br>
-
-        With the array <code>map</code>-function we can map the contents of the array to a HTML-string.
-        <p data-height="300" data-theme-id="10337" data-slug-hash="vzGXQK" data-default-tab="js,result" data-user="eGOB" data-pen-title="Tutorial #1" class="codepen">See the Pen <a href="https://codepen.io/eGOB/pen/vzGXQK/">Tutorial #1</a> by etienne (<a href="https://codepen.io/eGOB">@eGOB</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+        <p>
+          In this tutorial we are going to create a todo application with color categorization. <br>
+          The first step is to render the todos into an unsorted list (<code>ul</code>).
+        </p>
+        <p>
+          We use a constructor to create unique todo objects. The created objects are assigned to array.
+        </p>
+        <p>
+          With the array <code>map</code>-function we can map the contents of the array to a <code>string</code> containing <code>li</code>'s.
+          This <code>string</code> is assigned to the <code>innerHTML</code> property of the <code>ul</code>.
+        </p>
+        <p data-height="300" data-theme-id="10337" data-slug-hash="vzGXQK" data-default-tab="result" data-user="eGOB" data-pen-title="Tutorial #1" class="codepen">See the Pen <a href="https://codepen.io/eGOB/pen/vzGXQK/">Tutorial #1</a> by etienne (<a href="https://codepen.io/eGOB">@eGOB</a>) on <a href="https://codepen.io">CodePen</a>.</p>
       </div>
       <div class="container" id="step2">
         <h2>Step 2</h2>
-        <p data-height="300" data-theme-id="10337" data-slug-hash="WgwGqJ" data-default-tab="js,result" data-user="eGOB" data-pen-title="Tutorial #2" class="codepen">See the Pen <a href="https://codepen.io/eGOB/pen/WgwGqJ/">Tutorial #2</a> by etienne (<a href="https://codepen.io/eGOB">@eGOB</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+        <p>To add a todo, we add two <code>input</code> elements to the markup. One text input, for the todo text and one color input for the color of the todo.</p>
+        <p>We also add a submit button. Add a eventlistener to this button, to listen to click events. As soon as the button is clicked, we <code>push</code> the new todo with the values entered by the user to the todos array. Then we call the earlier created render function, which re-renders the todo's. </p>
+        <p data-height="300" data-theme-id="10337" data-slug-hash="WgwGqJ" data-default-tab="result" data-user="eGOB" data-pen-title="Tutorial #2" class="codepen">See the Pen <a href="https://codepen.io/eGOB/pen/WgwGqJ/">Tutorial #2</a> by etienne (<a href="https://codepen.io/eGOB">@eGOB</a>) on <a href="https://codepen.io">CodePen</a>.</p>
       </div>
       <div class="container" id="step3">
         <h2>Step 3</h2>
-        <p data-height="300" data-theme-id="10337" data-slug-hash="mGPOVw" data-default-tab="js,result" data-user="eGOB" data-pen-title="Tutorial #3" class="codepen">See the Pen <a href="https://codepen.io/eGOB/pen/mGPOVw/">Tutorial #3</a> by etienne (<a href="https://codepen.io/eGOB">@eGOB</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-      </div>
-      <div class="container" id="step4">
-        <h2>Step 4</h2>
+        <p>In the last step we add the ability to remove a todo. For this the render function is extended and a new button is added to each <code>li</code>.</p>
+        <p>This button contains a call to a newly created remove function. To identify each todo we also need to extend the todo constructor. We add a new property called <code>id</code> this property get's filled with a unique id each time the constructor is called.</p>
+        <p>To remove a todo we now search the selected todo, with the <code>find</code> function on the array. With the found todo we can remove it by filtering the array with the <code>filter</code> function.</p>
+        <p>As always when the todo array is changed, we call the <code>render</code> function, to re-render the todos onto the page.</p>
+        <p data-height="300" data-theme-id="10337" data-slug-hash="mGPOVw" data-default-tab="result" data-user="eGOB" data-pen-title="Tutorial #3" class="codepen">See the Pen <a href="https://codepen.io/eGOB/pen/mGPOVw/">Tutorial #3</a> by etienne (<a href="https://codepen.io/eGOB">@eGOB</a>) on <a href="https://codepen.io">CodePen</a>.</p>
       </div>
     </section>
     <div>
@@ -71,6 +80,7 @@
         </div>
       </section>
       <button class="restart" onclick="restart()">Restart</button>
+      <a href="Unitec_Storyboard.jpg" target="_blank">Storyboard</a>
     </div>
   </div>
   <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
