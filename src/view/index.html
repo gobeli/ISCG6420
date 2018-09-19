@@ -6,13 +6,24 @@
   <title>ISCG6420</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="../scss/style.scss">
+  <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
 </head>
 <body>
   <nav class="nav">
     <a href="/" class="nav__item nav__item--acitve">Home</a>
     <a href="#tasks" class="nav__item">Tasks</a>
     <a href="#homework" class="nav__item">Homework</a>
-    <a href="project1/index.html" class="nav__item">Project 1</a>
+    <div class="nav__item nav__item--dropdown">
+      Projects&nbsp;▾
+      <ul>
+        <li><a href="project1/index.html" class="nav__item">Project 1</a></li>
+        <li><a href="wordpress" class="nav__item">Project 2 Doc</a></li>
+      </ul>
+    </div>
+
   </nav>
   <header class="header">
     <img src="../assets/me.jpeg" class="header__me" alt="Me">
@@ -69,7 +80,15 @@
       <a href="homework/week6/index.html" class="weeks__week">
         <h3>Week 6</h3>
       </a>
+      <a href="homework/week9/index.html" class="weeks__week">
+        <h3>Week 9</h3>
+      </a>
     </section>
+    <script>
+      $('.nav__item--dropdown').click(e => {
+        $(e.target).find('ul').fadeToggle(100);
+      });
+    </script>
   </main>
 </body>
 </html>
