@@ -20,6 +20,7 @@
   "homepage": "https://github.com/gobeli/ISCG6420#readme",
   "dependencies": {
     "autoprefixer": "^9.0.1",
+    "fabric": "^2.4.2-b",
     "parcel": "^1.9.7"
   },
   "devDependencies": {

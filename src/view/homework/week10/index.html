@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Auckland Transport</title>
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+</head>
+<body>
+  <table id="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Phone</th>
+        <th>Opening hours</th>
+      </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+  </table>
+  <script>
+    const $table = $('#table').find('tbody');
+
+    function onSuccess({ error, response }) {
+      const rows = response.map(r => `
+        <tr>
+          <td>${r.name}</td>
+          <td>${r.address}</td>
+          <td>${r.phone}</td>
+          <td>${r.openHours}</td>
+        </tr>
+      `);
+      $table.html(rows);
+    }
+
+    $(function() {
+      $.ajax({
+        url: 'https://api.at.govt.nz/v2/locations/customerservicecentres',
+        headers: { 'Ocp-Apim-Subscription-Key': '32e613cf322848659d285e1bc29826b8' },
+        success: onSuccess
+      })
+    });
+  </script>
+</body>
+</html>
